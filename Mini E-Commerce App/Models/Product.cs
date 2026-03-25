@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-public class Class1
+namespace Mini_E_Commerce_App.Models
 {
-	public Class1()
-	{
-	}
+    internal class Product
+    {
+    }
 }
