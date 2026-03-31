@@ -14,5 +14,10 @@ namespace Mini_E_Commerce_App.Services
         {
             InitializeComponent();
         }
+
+        private void CheckoutForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

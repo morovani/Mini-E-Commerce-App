@@ -28,12 +28,128 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "CheckoutForm";
+            lblStatus = new Label();
+            comboBox1 = new ComboBox();
+            btnPayment = new Button();
+            lblDiscountSummary = new Label();
+            grpPaymentSummary = new GroupBox();
+            lblTaxSummary = new Label();
+            lblSummary = new Label();
+            txtCardInfo = new TextBox();
+            grpPaymentSummary.SuspendLayout();
+            SuspendLayout();
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Location = new Point(12, 34);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(44, 18);
+            lblStatus.TabIndex = 0;
+            lblStatus.Text = "Status: ";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(63, 30);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 26);
+            comboBox1.TabIndex = 1;
+            // 
+            // btnPayment
+            // 
+            btnPayment.Location = new Point(78, 367);
+            btnPayment.Margin = new Padding(3, 4, 3, 4);
+            btnPayment.Name = "btnPayment";
+            btnPayment.Size = new Size(92, 59);
+            btnPayment.TabIndex = 2;
+            btnPayment.Text = "Confirm Payment";
+            btnPayment.UseVisualStyleBackColor = true;
+            // 
+            // lblDiscountSummary
+            // 
+            lblDiscountSummary.AutoSize = true;
+            lblDiscountSummary.BorderStyle = BorderStyle.Fixed3D;
+            lblDiscountSummary.Location = new Point(16, 47);
+            lblDiscountSummary.Name = "lblDiscountSummary";
+            lblDiscountSummary.Size = new Size(82, 20);
+            lblDiscountSummary.TabIndex = 3;
+            lblDiscountSummary.Text = "Discount: $$$";
+            // 
+            // grpPaymentSummary
+            // 
+            grpPaymentSummary.Controls.Add(txtCardInfo);
+            grpPaymentSummary.Controls.Add(lblSummary);
+            grpPaymentSummary.Controls.Add(lblTaxSummary);
+            grpPaymentSummary.Controls.Add(lblDiscountSummary);
+            grpPaymentSummary.Location = new Point(12, 68);
+            grpPaymentSummary.Margin = new Padding(3, 4, 3, 4);
+            grpPaymentSummary.Name = "grpPaymentSummary";
+            grpPaymentSummary.Padding = new Padding(3, 4, 3, 4);
+            grpPaymentSummary.Size = new Size(245, 277);
+            grpPaymentSummary.TabIndex = 4;
+            grpPaymentSummary.TabStop = false;
+            grpPaymentSummary.Text = "Payment Summary";
+            // 
+            // lblTaxSummary
+            // 
+            lblTaxSummary.AutoSize = true;
+            lblTaxSummary.BorderStyle = BorderStyle.Fixed3D;
+            lblTaxSummary.Location = new Point(16, 107);
+            lblTaxSummary.Name = "lblTaxSummary";
+            lblTaxSummary.Size = new Size(86, 20);
+            lblTaxSummary.TabIndex = 4;
+            lblTaxSummary.Text = "Tax (15%): $$$";
+            // 
+            // lblSummary
+            // 
+            lblSummary.AutoSize = true;
+            lblSummary.BorderStyle = BorderStyle.Fixed3D;
+            lblSummary.Location = new Point(16, 173);
+            lblSummary.Name = "lblSummary";
+            lblSummary.Size = new Size(85, 20);
+            lblSummary.TabIndex = 5;
+            lblSummary.Text = "Net Total: $$$";
+            // 
+            // txtCardInfo
+            // 
+            txtCardInfo.Location = new Point(6, 239);
+            txtCardInfo.Margin = new Padding(3, 4, 3, 4);
+            txtCardInfo.Name = "txtCardInfo";
+            txtCardInfo.Size = new Size(233, 21);
+            txtCardInfo.TabIndex = 6;
+            // 
+            // CheckoutForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 18F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(269, 439);
+            Controls.Add(grpPaymentSummary);
+            Controls.Add(btnPayment);
+            Controls.Add(comboBox1);
+            Controls.Add(lblStatus);
+            Font = new Font("Gill Sans MT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "CheckoutForm";
+            Text = "CheckoutForm";
+            Load += CheckoutForm_Load;
+            grpPaymentSummary.ResumeLayout(false);
+            grpPaymentSummary.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblStatus;
+        private ComboBox comboBox1;
+        private Button btnPayment;
+        private Label lblDiscountSummary;
+        private GroupBox grpPaymentSummary;
+        private Label label2;
+        private Label lblTaxSummary;
+        private Label lblSummary;
+        private TextBox txtCardInfo;
     }
 }

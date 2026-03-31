@@ -28,12 +28,181 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "MainShoppingForm";
+            dgvProducts = new DataGridView();
+            cboCategory = new ComboBox();
+            txtSearch = new TextBox();
+            btnAddCart = new Button();
+            btnViewCart = new Button();
+            btnSearch = new Button();
+            lblWelcome = new Label();
+            grpProductDetails = new GroupBox();
+            nudQuantity = new NumericUpDown();
+            lblDescription = new Label();
+            lblType = new Label();
+            lblPrice = new Label();
+            lblName = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
+            grpProductDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvProducts
+            // 
+            dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProducts.Location = new Point(12, 163);
+            dgvProducts.Name = "dgvProducts";
+            dgvProducts.Size = new Size(464, 353);
+            dgvProducts.TabIndex = 0;
+            // 
+            // cboCategory
+            // 
+            cboCategory.FormattingEnabled = true;
+            cboCategory.Location = new Point(354, 127);
+            cboCategory.Name = "cboCategory";
+            cboCategory.Size = new Size(121, 23);
+            cboCategory.TabIndex = 1;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(12, 68);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(247, 23);
+            txtSearch.TabIndex = 2;
+            // 
+            // btnAddCart
+            // 
+            btnAddCart.Location = new Point(12, 117);
+            btnAddCart.Name = "btnAddCart";
+            btnAddCart.Size = new Size(149, 40);
+            btnAddCart.TabIndex = 3;
+            btnAddCart.Text = "Add to Cart";
+            btnAddCart.UseVisualStyleBackColor = true;
+            // 
+            // btnViewCart
+            // 
+            btnViewCart.Location = new Point(183, 117);
+            btnViewCart.Name = "btnViewCart";
+            btnViewCart.Size = new Size(149, 40);
+            btnViewCart.TabIndex = 4;
+            btnViewCart.Text = "View Cart";
+            btnViewCart.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(279, 68);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(75, 23);
+            btnSearch.TabIndex = 5;
+            btnSearch.Text = "search";
+            btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // lblWelcome
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.Font = new Font("Gill Sans MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblWelcome.Location = new Point(354, 9);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(153, 23);
+            lblWelcome.TabIndex = 6;
+            lblWelcome.Text = "Welcome Username!!";
+            // 
+            // grpProductDetails
+            // 
+            grpProductDetails.Controls.Add(nudQuantity);
+            grpProductDetails.Controls.Add(lblDescription);
+            grpProductDetails.Controls.Add(lblType);
+            grpProductDetails.Controls.Add(lblPrice);
+            grpProductDetails.Controls.Add(lblName);
+            grpProductDetails.Location = new Point(522, 68);
+            grpProductDetails.Name = "grpProductDetails";
+            grpProductDetails.Size = new Size(350, 448);
+            grpProductDetails.TabIndex = 7;
+            grpProductDetails.TabStop = false;
+            grpProductDetails.Text = "Product Details";
+            // 
+            // nudQuantity
+            // 
+            nudQuantity.Location = new Point(90, 381);
+            nudQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudQuantity.Name = "nudQuantity";
+            nudQuantity.Size = new Size(120, 23);
+            nudQuantity.TabIndex = 4;
+            nudQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // lblDescription
+            // 
+            lblDescription.AutoSize = true;
+            lblDescription.Location = new Point(19, 242);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(112, 15);
+            lblDescription.TabIndex = 3;
+            lblDescription.Text = "Product Description";
+            // 
+            // lblType
+            // 
+            lblType.AutoSize = true;
+            lblType.Location = new Point(19, 177);
+            lblType.Name = "lblType";
+            lblType.Size = new Size(76, 15);
+            lblType.TabIndex = 2;
+            lblType.Text = "Product Type";
+            // 
+            // lblPrice
+            // 
+            lblPrice.AutoSize = true;
+            lblPrice.Location = new Point(19, 120);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(78, 15);
+            lblPrice.TabIndex = 1;
+            lblPrice.Text = "Product Price";
+            // 
+            // lblName
+            // 
+            lblName.AutoSize = true;
+            lblName.Location = new Point(19, 50);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(81, 15);
+            lblName.TabIndex = 0;
+            lblName.Text = "ProductName";
+            // 
+            // MainShoppingForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(884, 528);
+            Controls.Add(grpProductDetails);
+            Controls.Add(lblWelcome);
+            Controls.Add(btnSearch);
+            Controls.Add(btnViewCart);
+            Controls.Add(btnAddCart);
+            Controls.Add(txtSearch);
+            Controls.Add(cboCategory);
+            Controls.Add(dgvProducts);
+            Name = "MainShoppingForm";
+            Text = "MainShoppingForm";
+            Load += MainShoppingForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
+            grpProductDetails.ResumeLayout(false);
+            grpProductDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudQuantity).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private DataGridView dgvProducts;
+        private ComboBox cboCategory;
+        private TextBox txtSearch;
+        private Button btnAddCart;
+        private Button btnViewCart;
+        private Button btnSearch;
+        private Label lblWelcome;
+        private GroupBox grpProductDetails;
+        private NumericUpDown nudQuantity;
+        private Label lblDescription;
+        private Label lblType;
+        private Label lblPrice;
+        private Label lblName;
     }
 }

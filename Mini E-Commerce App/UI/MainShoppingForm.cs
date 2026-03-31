@@ -14,5 +14,10 @@ namespace Mini_E_Commerce_App
         {
             InitializeComponent();
         }
+
+        private void MainShoppingForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
