@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mini_E_Commerce_App.Interfaces
 {
-    internal class IDiscountable
+    internal interface IDiscountable
     {
     }
 }
