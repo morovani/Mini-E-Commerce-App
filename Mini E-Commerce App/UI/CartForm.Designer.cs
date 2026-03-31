@@ -146,7 +146,7 @@
             Controls.Add(lblTotal);
             Controls.Add(dgvCartItems);
             Name = "CartForm";
-            Text = "CartForm";
+            Text = "Cart";
             Load += CartForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCartItems).EndInit();
             grpCartDetails.ResumeLayout(false);

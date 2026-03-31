@@ -52,7 +52,7 @@
             dgvProducts.Location = new Point(12, 163);
             dgvProducts.Name = "dgvProducts";
             dgvProducts.Size = new Size(464, 353);
-            dgvProducts.TabIndex = 0;
+            dgvProducts.TabIndex = 5;
             // 
             // cboCategory
             // 
@@ -60,21 +60,21 @@
             cboCategory.Location = new Point(354, 127);
             cboCategory.Name = "cboCategory";
             cboCategory.Size = new Size(121, 23);
-            cboCategory.TabIndex = 1;
+            cboCategory.TabIndex = 4;
             // 
             // txtSearch
             // 
             txtSearch.Location = new Point(12, 68);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(247, 23);
-            txtSearch.TabIndex = 2;
+            txtSearch.TabIndex = 0;
             // 
             // btnAddCart
             // 
             btnAddCart.Location = new Point(12, 117);
             btnAddCart.Name = "btnAddCart";
             btnAddCart.Size = new Size(149, 40);
-            btnAddCart.TabIndex = 3;
+            btnAddCart.TabIndex = 2;
             btnAddCart.Text = "Add to Cart";
             btnAddCart.UseVisualStyleBackColor = true;
             // 
@@ -83,7 +83,7 @@
             btnViewCart.Location = new Point(183, 117);
             btnViewCart.Name = "btnViewCart";
             btnViewCart.Size = new Size(149, 40);
-            btnViewCart.TabIndex = 4;
+            btnViewCart.TabIndex = 3;
             btnViewCart.Text = "View Cart";
             btnViewCart.UseVisualStyleBackColor = true;
             // 
@@ -92,7 +92,7 @@
             btnSearch.Location = new Point(279, 68);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(75, 23);
-            btnSearch.TabIndex = 5;
+            btnSearch.TabIndex = 1;
             btnSearch.Text = "search";
             btnSearch.UseVisualStyleBackColor = true;
             // 
@@ -103,7 +103,7 @@
             lblWelcome.Location = new Point(354, 9);
             lblWelcome.Name = "lblWelcome";
             lblWelcome.Size = new Size(153, 23);
-            lblWelcome.TabIndex = 6;
+            lblWelcome.TabIndex = 7;
             lblWelcome.Text = "Welcome Username!!";
             // 
             // grpProductDetails
@@ -116,7 +116,7 @@
             grpProductDetails.Location = new Point(522, 68);
             grpProductDetails.Name = "grpProductDetails";
             grpProductDetails.Size = new Size(350, 448);
-            grpProductDetails.TabIndex = 7;
+            grpProductDetails.TabIndex = 6;
             grpProductDetails.TabStop = false;
             grpProductDetails.Text = "Product Details";
             // 
@@ -179,7 +179,7 @@
             Controls.Add(cboCategory);
             Controls.Add(dgvProducts);
             Name = "MainShoppingForm";
-            Text = "MainShoppingForm";
+            Text = "Shop - Browse";
             Load += MainShoppingForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             grpProductDetails.ResumeLayout(false);

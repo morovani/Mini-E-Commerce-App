@@ -124,7 +124,7 @@
             Font = new Font("Gill Sans MT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(3, 4, 3, 4);
             Name = "LoginForm";
-            Text = "Login Form";
+            Text = "Login";
             Load += LoginForm_Load;
             ResumeLayout(false);
             PerformLayout();

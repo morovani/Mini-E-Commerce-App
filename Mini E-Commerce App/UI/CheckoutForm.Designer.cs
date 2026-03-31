@@ -63,7 +63,7 @@
             btnPayment.Margin = new Padding(3, 4, 3, 4);
             btnPayment.Name = "btnPayment";
             btnPayment.Size = new Size(92, 59);
-            btnPayment.TabIndex = 2;
+            btnPayment.TabIndex = 3;
             btnPayment.Text = "Confirm Payment";
             btnPayment.UseVisualStyleBackColor = true;
             // 
@@ -74,7 +74,7 @@
             lblDiscountSummary.Location = new Point(16, 47);
             lblDiscountSummary.Name = "lblDiscountSummary";
             lblDiscountSummary.Size = new Size(82, 20);
-            lblDiscountSummary.TabIndex = 3;
+            lblDiscountSummary.TabIndex = 0;
             lblDiscountSummary.Text = "Discount: $$$";
             // 
             // grpPaymentSummary
@@ -88,7 +88,7 @@
             grpPaymentSummary.Name = "grpPaymentSummary";
             grpPaymentSummary.Padding = new Padding(3, 4, 3, 4);
             grpPaymentSummary.Size = new Size(245, 277);
-            grpPaymentSummary.TabIndex = 4;
+            grpPaymentSummary.TabIndex = 2;
             grpPaymentSummary.TabStop = false;
             grpPaymentSummary.Text = "Payment Summary";
             // 
@@ -99,7 +99,7 @@
             lblTaxSummary.Location = new Point(16, 107);
             lblTaxSummary.Name = "lblTaxSummary";
             lblTaxSummary.Size = new Size(86, 20);
-            lblTaxSummary.TabIndex = 4;
+            lblTaxSummary.TabIndex = 1;
             lblTaxSummary.Text = "Tax (15%): $$$";
             // 
             // lblSummary
@@ -109,7 +109,7 @@
             lblSummary.Location = new Point(16, 173);
             lblSummary.Name = "lblSummary";
             lblSummary.Size = new Size(85, 20);
-            lblSummary.TabIndex = 5;
+            lblSummary.TabIndex = 2;
             lblSummary.Text = "Net Total: $$$";
             // 
             // txtCardInfo
@@ -118,7 +118,7 @@
             txtCardInfo.Margin = new Padding(3, 4, 3, 4);
             txtCardInfo.Name = "txtCardInfo";
             txtCardInfo.Size = new Size(233, 21);
-            txtCardInfo.TabIndex = 6;
+            txtCardInfo.TabIndex = 3;
             // 
             // CheckoutForm
             // 
@@ -132,7 +132,7 @@
             Font = new Font("Gill Sans MT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(3, 4, 3, 4);
             Name = "CheckoutForm";
-            Text = "CheckoutForm";
+            Text = "Checkout";
             Load += CheckoutForm_Load;
             grpPaymentSummary.ResumeLayout(false);
             grpPaymentSummary.PerformLayout();
