@@ -107,9 +107,11 @@
             lblErrorMessage.Size = new Size(40, 18);
             lblErrorMessage.TabIndex = 7;
             lblErrorMessage.Text = "label4";
+            lblErrorMessage.Visible = false;
             // 
             // LoginForm
             // 
+            AcceptButton = btnLogin;
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(311, 283);
@@ -124,6 +126,7 @@
             Font = new Font("Gill Sans MT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(3, 4, 3, 4);
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += LoginForm_Load;
             ResumeLayout(false);

@@ -38,6 +38,7 @@
             lblPrice = new Label();
             lblSubTotal = new Label();
             numericUpDown1 = new NumericUpDown();
+            btnReturnToShop = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCartItems).BeginInit();
             grpCartDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -80,9 +81,9 @@
             // 
             // btnUpdateCart
             // 
-            btnUpdateCart.Location = new Point(358, 362);
+            btnUpdateCart.Location = new Point(170, 336);
             btnUpdateCart.Name = "btnUpdateCart";
-            btnUpdateCart.Size = new Size(121, 51);
+            btnUpdateCart.Size = new Size(73, 46);
             btnUpdateCart.TabIndex = 4;
             btnUpdateCart.Text = "Update Cart";
             btnUpdateCart.UseVisualStyleBackColor = true;
@@ -90,6 +91,7 @@
             // grpCartDetails
             // 
             grpCartDetails.Controls.Add(numericUpDown1);
+            grpCartDetails.Controls.Add(btnUpdateCart);
             grpCartDetails.Controls.Add(lblSubTotal);
             grpCartDetails.Controls.Add(lblPrice);
             grpCartDetails.Controls.Add(lblName);
@@ -99,6 +101,7 @@
             grpCartDetails.TabIndex = 5;
             grpCartDetails.TabStop = false;
             grpCartDetails.Text = "Cart Item Details";
+            grpCartDetails.Visible = false;
             // 
             // lblName
             // 
@@ -129,23 +132,35 @@
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(79, 366);
+            numericUpDown1.Location = new Point(23, 350);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(120, 23);
             numericUpDown1.TabIndex = 3;
             // 
+            // btnReturnToShop
+            // 
+            btnReturnToShop.Location = new Point(359, 362);
+            btnReturnToShop.Name = "btnReturnToShop";
+            btnReturnToShop.Size = new Size(121, 51);
+            btnReturnToShop.TabIndex = 4;
+            btnReturnToShop.Text = "Return to Shop";
+            btnReturnToShop.UseVisualStyleBackColor = true;
+            // 
             // CartForm
             // 
+            AcceptButton = btnCheckout;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnReturnToShop;
             ClientSize = new Size(800, 426);
+            Controls.Add(btnReturnToShop);
             Controls.Add(grpCartDetails);
-            Controls.Add(btnUpdateCart);
             Controls.Add(btnCheckout);
             Controls.Add(btnRemoveItem);
             Controls.Add(lblTotal);
             Controls.Add(dgvCartItems);
             Name = "CartForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cart";
             Load += CartForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCartItems).EndInit();
@@ -168,5 +183,6 @@
         private Label lblPrice;
         private Label lblName;
         private NumericUpDown numericUpDown1;
+        private Button btnReturnToShop;
     }
 }

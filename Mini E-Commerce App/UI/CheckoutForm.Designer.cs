@@ -36,6 +36,8 @@
             lblTaxSummary = new Label();
             lblSummary = new Label();
             txtCardInfo = new TextBox();
+            btnReturnToCart = new Button();
+            label1 = new Label();
             grpPaymentSummary.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             // 
             // btnPayment
             // 
-            btnPayment.Location = new Point(78, 367);
+            btnPayment.Location = new Point(12, 367);
             btnPayment.Margin = new Padding(3, 4, 3, 4);
             btnPayment.Name = "btnPayment";
             btnPayment.Size = new Size(92, 59);
@@ -79,6 +81,7 @@
             // 
             // grpPaymentSummary
             // 
+            grpPaymentSummary.Controls.Add(label1);
             grpPaymentSummary.Controls.Add(txtCardInfo);
             grpPaymentSummary.Controls.Add(lblSummary);
             grpPaymentSummary.Controls.Add(lblTaxSummary);
@@ -120,11 +123,34 @@
             txtCardInfo.Size = new Size(233, 21);
             txtCardInfo.TabIndex = 3;
             // 
+            // btnReturnToCart
+            // 
+            btnReturnToCart.Location = new Point(159, 367);
+            btnReturnToCart.Margin = new Padding(3, 4, 3, 4);
+            btnReturnToCart.Name = "btnReturnToCart";
+            btnReturnToCart.Size = new Size(92, 59);
+            btnReturnToCart.TabIndex = 4;
+            btnReturnToCart.Text = "Back To Cart";
+            btnReturnToCart.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Location = new Point(6, 217);
+            label1.Name = "label1";
+            label1.Size = new Size(73, 20);
+            label1.TabIndex = 4;
+            label1.Text = "Card Details";
+            // 
             // CheckoutForm
             // 
+            AcceptButton = btnPayment;
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnReturnToCart;
             ClientSize = new Size(269, 439);
+            Controls.Add(btnReturnToCart);
             Controls.Add(grpPaymentSummary);
             Controls.Add(btnPayment);
             Controls.Add(comboBox1);
@@ -132,6 +158,7 @@
             Font = new Font("Gill Sans MT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(3, 4, 3, 4);
             Name = "CheckoutForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Checkout";
             Load += CheckoutForm_Load;
             grpPaymentSummary.ResumeLayout(false);
@@ -151,5 +178,7 @@
         private Label lblTaxSummary;
         private Label lblSummary;
         private TextBox txtCardInfo;
+        private Button btnReturnToCart;
+        private Label label1;
     }
 }

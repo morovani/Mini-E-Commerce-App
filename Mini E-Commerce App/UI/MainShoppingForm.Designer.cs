@@ -41,6 +41,7 @@
             lblType = new Label();
             lblPrice = new Label();
             lblName = new Label();
+            btnLogout = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             grpProductDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
@@ -119,6 +120,7 @@
             grpProductDetails.TabIndex = 6;
             grpProductDetails.TabStop = false;
             grpProductDetails.Text = "Product Details";
+            grpProductDetails.Visible = false;
             // 
             // nudQuantity
             // 
@@ -165,11 +167,23 @@
             lblName.TabIndex = 0;
             lblName.Text = "ProductName";
             // 
+            // btnLogout
+            // 
+            btnLogout.Location = new Point(797, 12);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(75, 23);
+            btnLogout.TabIndex = 8;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            // 
             // MainShoppingForm
             // 
+            AcceptButton = btnSearch;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnLogout;
             ClientSize = new Size(884, 528);
+            Controls.Add(btnLogout);
             Controls.Add(grpProductDetails);
             Controls.Add(lblWelcome);
             Controls.Add(btnSearch);
@@ -179,6 +193,7 @@
             Controls.Add(cboCategory);
             Controls.Add(dgvProducts);
             Name = "MainShoppingForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Shop - Browse";
             Load += MainShoppingForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
@@ -204,5 +219,6 @@
         private Label lblType;
         private Label lblPrice;
         private Label lblName;
+        private Button btnLogout;
     }
 }
