@@ -36,6 +36,7 @@
             btnSearch = new Button();
             lblWelcome = new Label();
             grpProductDetails = new GroupBox();
+            lblStock = new Label();
             nudQuantity = new NumericUpDown();
             lblDescription = new Label();
             lblType = new Label();
@@ -54,6 +55,7 @@
             dgvProducts.Name = "dgvProducts";
             dgvProducts.Size = new Size(464, 353);
             dgvProducts.TabIndex = 5;
+            dgvProducts.SelectionChanged += dgvProducts_SelectionChanged;
             // 
             // cboCategory
             // 
@@ -72,6 +74,7 @@
             // 
             // btnAddCart
             // 
+            btnAddCart.Enabled = false;
             btnAddCart.Location = new Point(12, 117);
             btnAddCart.Name = "btnAddCart";
             btnAddCart.Size = new Size(149, 40);
@@ -109,6 +112,7 @@
             // 
             // grpProductDetails
             // 
+            grpProductDetails.Controls.Add(lblStock);
             grpProductDetails.Controls.Add(nudQuantity);
             grpProductDetails.Controls.Add(lblDescription);
             grpProductDetails.Controls.Add(lblType);
@@ -121,6 +125,15 @@
             grpProductDetails.TabStop = false;
             grpProductDetails.Text = "Product Details";
             grpProductDetails.Visible = false;
+            // 
+            // lblStock
+            // 
+            lblStock.AutoSize = true;
+            lblStock.Location = new Point(25, 296);
+            lblStock.Name = "lblStock";
+            lblStock.Size = new Size(42, 15);
+            lblStock.TabIndex = 5;
+            lblStock.Text = "Stock: ";
             // 
             // nudQuantity
             // 
@@ -220,5 +233,6 @@
         private Label lblPrice;
         private Label lblName;
         private Button btnLogout;
+        private Label lblStock;
     }
 }

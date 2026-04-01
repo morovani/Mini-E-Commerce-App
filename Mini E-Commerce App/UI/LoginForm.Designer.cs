@@ -36,6 +36,7 @@
             label2 = new Label();
             label3 = new Label();
             lblErrorMessage = new Label();
+            button2 = new Button();
             SuspendLayout();
             // 
             // txtUsername
@@ -64,13 +65,14 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(56, 208);
+            btnLogin.Location = new Point(1, 208);
             btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(154, 59);
             btnLogin.TabIndex = 3;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // label1
             // 
@@ -109,12 +111,24 @@
             lblErrorMessage.Text = "label4";
             lblErrorMessage.Visible = false;
             // 
+            // button2
+            // 
+            button2.Location = new Point(161, 208);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(154, 59);
+            button2.TabIndex = 9;
+            button2.Text = "Sign Up";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // LoginForm
             // 
             AcceptButton = btnLogin;
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(311, 283);
+            Controls.Add(button2);
             Controls.Add(lblErrorMessage);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -143,5 +157,6 @@
         private Label label2;
         private Label label3;
         private Label lblErrorMessage;
+        private Button button2;
     }
 }

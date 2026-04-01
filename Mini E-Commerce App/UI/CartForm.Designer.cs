@@ -32,7 +32,7 @@
             lblTotal = new Label();
             btnRemoveItem = new Button();
             btnCheckout = new Button();
-            btnUpdateCart = new Button();
+            btnUpdateItem = new Button();
             grpCartDetails = new GroupBox();
             lblName = new Label();
             lblPrice = new Label();
@@ -63,6 +63,7 @@
             // 
             // btnRemoveItem
             // 
+            btnRemoveItem.Enabled = false;
             btnRemoveItem.Location = new Point(12, 362);
             btnRemoveItem.Name = "btnRemoveItem";
             btnRemoveItem.Size = new Size(121, 51);
@@ -79,19 +80,19 @@
             btnCheckout.Text = "Checkout";
             btnCheckout.UseVisualStyleBackColor = true;
             // 
-            // btnUpdateCart
+            // btnUpdateItem
             // 
-            btnUpdateCart.Location = new Point(170, 336);
-            btnUpdateCart.Name = "btnUpdateCart";
-            btnUpdateCart.Size = new Size(73, 46);
-            btnUpdateCart.TabIndex = 4;
-            btnUpdateCart.Text = "Update Cart";
-            btnUpdateCart.UseVisualStyleBackColor = true;
+            btnUpdateItem.Location = new Point(170, 336);
+            btnUpdateItem.Name = "btnUpdateItem";
+            btnUpdateItem.Size = new Size(73, 46);
+            btnUpdateItem.TabIndex = 4;
+            btnUpdateItem.Text = "Update Item";
+            btnUpdateItem.UseVisualStyleBackColor = true;
             // 
             // grpCartDetails
             // 
             grpCartDetails.Controls.Add(numericUpDown1);
-            grpCartDetails.Controls.Add(btnUpdateCart);
+            grpCartDetails.Controls.Add(btnUpdateItem);
             grpCartDetails.Controls.Add(lblSubTotal);
             grpCartDetails.Controls.Add(lblPrice);
             grpCartDetails.Controls.Add(lblName);
@@ -177,7 +178,7 @@
         private Label lblTotal;
         private Button btnRemoveItem;
         private Button btnCheckout;
-        private Button btnUpdateCart;
+        private Button btnUpdateItem;
         private GroupBox grpCartDetails;
         private Label lblSubTotal;
         private Label lblPrice;
