@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Mini_E_Commerce_App.Interfaces
 {
-    internal interface IDiscountable
+    public interface IDiscountable
     {
+        decimal ApplyDiscount(decimal amount);
     }
 }
