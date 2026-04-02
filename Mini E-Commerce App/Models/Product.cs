@@ -43,6 +43,7 @@ namespace Mini_E_Commerce_App.Models
 
         public int CompareTo(Product other)
         {
+            if (other == null) return 1;
             return this.Price.CompareTo(other.Price);
         }
     }

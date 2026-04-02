@@ -34,10 +34,10 @@
             btnCheckout = new Button();
             btnUpdateItem = new Button();
             grpCartDetails = new GroupBox();
-            lblName = new Label();
-            lblPrice = new Label();
-            lblSubTotal = new Label();
             numericUpDown1 = new NumericUpDown();
+            lblSubTotal = new Label();
+            lblPrice = new Label();
+            lblName = new Label();
             btnReturnToShop = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCartItems).BeginInit();
             grpCartDetails.SuspendLayout();
@@ -47,47 +47,54 @@
             // dgvCartItems
             // 
             dgvCartItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCartItems.Location = new Point(12, 12);
+            dgvCartItems.Location = new Point(14, 16);
+            dgvCartItems.Margin = new Padding(3, 4, 3, 4);
             dgvCartItems.Name = "dgvCartItems";
-            dgvCartItems.Size = new Size(468, 276);
+            dgvCartItems.RowHeadersWidth = 51;
+            dgvCartItems.Size = new Size(535, 368);
             dgvCartItems.TabIndex = 0;
             // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(50, 318);
+            lblTotal.Location = new Point(57, 424);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(85, 15);
+            lblTotal.Size = new Size(109, 20);
             lblTotal.TabIndex = 1;
             lblTotal.Text = "Total Price: $$$";
             // 
             // btnRemoveItem
             // 
             btnRemoveItem.Enabled = false;
-            btnRemoveItem.Location = new Point(12, 362);
+            btnRemoveItem.Location = new Point(14, 483);
+            btnRemoveItem.Margin = new Padding(3, 4, 3, 4);
             btnRemoveItem.Name = "btnRemoveItem";
-            btnRemoveItem.Size = new Size(121, 51);
+            btnRemoveItem.Size = new Size(138, 68);
             btnRemoveItem.TabIndex = 2;
             btnRemoveItem.Text = "Remove Item";
             btnRemoveItem.UseVisualStyleBackColor = true;
+            btnRemoveItem.Click += btnRemoveItem_Click;
             // 
             // btnCheckout
             // 
-            btnCheckout.Location = new Point(185, 362);
+            btnCheckout.Location = new Point(211, 483);
+            btnCheckout.Margin = new Padding(3, 4, 3, 4);
             btnCheckout.Name = "btnCheckout";
-            btnCheckout.Size = new Size(121, 51);
+            btnCheckout.Size = new Size(138, 68);
             btnCheckout.TabIndex = 3;
             btnCheckout.Text = "Checkout";
             btnCheckout.UseVisualStyleBackColor = true;
             // 
             // btnUpdateItem
             // 
-            btnUpdateItem.Location = new Point(170, 336);
+            btnUpdateItem.Location = new Point(194, 448);
+            btnUpdateItem.Margin = new Padding(3, 4, 3, 4);
             btnUpdateItem.Name = "btnUpdateItem";
-            btnUpdateItem.Size = new Size(73, 46);
+            btnUpdateItem.Size = new Size(83, 61);
             btnUpdateItem.TabIndex = 4;
             btnUpdateItem.Text = "Update Item";
             btnUpdateItem.UseVisualStyleBackColor = true;
+            btnUpdateItem.Click += btnUpdateItem_Click;
             // 
             // grpCartDetails
             // 
@@ -96,53 +103,57 @@
             grpCartDetails.Controls.Add(lblSubTotal);
             grpCartDetails.Controls.Add(lblPrice);
             grpCartDetails.Controls.Add(lblName);
-            grpCartDetails.Location = new Point(522, 12);
+            grpCartDetails.Location = new Point(597, 16);
+            grpCartDetails.Margin = new Padding(3, 4, 3, 4);
             grpCartDetails.Name = "grpCartDetails";
-            grpCartDetails.Size = new Size(266, 402);
+            grpCartDetails.Padding = new Padding(3, 4, 3, 4);
+            grpCartDetails.Size = new Size(304, 536);
             grpCartDetails.TabIndex = 5;
             grpCartDetails.TabStop = false;
             grpCartDetails.Text = "Cart Item Details";
             grpCartDetails.Visible = false;
             // 
-            // lblName
+            // numericUpDown1
             // 
-            lblName.AutoSize = true;
-            lblName.Location = new Point(23, 50);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(84, 15);
-            lblName.TabIndex = 0;
-            lblName.Text = "Product Name";
-            // 
-            // lblPrice
-            // 
-            lblPrice.AutoSize = true;
-            lblPrice.Location = new Point(20, 103);
-            lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(81, 15);
-            lblPrice.TabIndex = 1;
-            lblPrice.Text = " Product Price";
+            numericUpDown1.Location = new Point(26, 467);
+            numericUpDown1.Margin = new Padding(3, 4, 3, 4);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(137, 27);
+            numericUpDown1.TabIndex = 3;
             // 
             // lblSubTotal
             // 
             lblSubTotal.AutoSize = true;
-            lblSubTotal.Location = new Point(22, 153);
+            lblSubTotal.Location = new Point(25, 204);
             lblSubTotal.Name = "lblSubTotal";
-            lblSubTotal.Size = new Size(55, 15);
+            lblSubTotal.Size = new Size(71, 20);
             lblSubTotal.TabIndex = 2;
             lblSubTotal.Text = "Sub Total";
             // 
-            // numericUpDown1
+            // lblPrice
             // 
-            numericUpDown1.Location = new Point(23, 350);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 3;
+            lblPrice.AutoSize = true;
+            lblPrice.Location = new Point(23, 137);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(100, 20);
+            lblPrice.TabIndex = 1;
+            lblPrice.Text = " Product Price";
+            // 
+            // lblName
+            // 
+            lblName.AutoSize = true;
+            lblName.Location = new Point(26, 67);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(104, 20);
+            lblName.TabIndex = 0;
+            lblName.Text = "Product Name";
             // 
             // btnReturnToShop
             // 
-            btnReturnToShop.Location = new Point(359, 362);
+            btnReturnToShop.Location = new Point(410, 483);
+            btnReturnToShop.Margin = new Padding(3, 4, 3, 4);
             btnReturnToShop.Name = "btnReturnToShop";
-            btnReturnToShop.Size = new Size(121, 51);
+            btnReturnToShop.Size = new Size(138, 68);
             btnReturnToShop.TabIndex = 4;
             btnReturnToShop.Text = "Return to Shop";
             btnReturnToShop.UseVisualStyleBackColor = true;
@@ -150,16 +161,17 @@
             // CartForm
             // 
             AcceptButton = btnCheckout;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnReturnToShop;
-            ClientSize = new Size(800, 426);
+            ClientSize = new Size(914, 568);
             Controls.Add(btnReturnToShop);
             Controls.Add(grpCartDetails);
             Controls.Add(btnCheckout);
             Controls.Add(btnRemoveItem);
             Controls.Add(lblTotal);
             Controls.Add(dgvCartItems);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CartForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cart";
