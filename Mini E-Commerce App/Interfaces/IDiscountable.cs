@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-public class Class1
+namespace Mini_E_Commerce_App.Interfaces
 {
-	public Class1()
-	{
-	}
+    public interface IDiscountable
+    {
+        decimal ApplyDiscount(decimal amount);
+    }
 }
