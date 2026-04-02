@@ -16,9 +16,11 @@ namespace Mini_E_Commerce_App
         {
             InitializeComponent();
         }
+        private Cart cart = new Cart();
 
         private void MainShoppingForm_Load(object sender, EventArgs e)
         {
+            btnAddCart.Enabled = true;
             LoadSampleData();
             LoadProducts();
         }
@@ -60,13 +62,27 @@ namespace Mini_E_Commerce_App
         {
             if (dgvProducts.CurrentRow != null)
             {
-                Product product = (Product)dgvProducts.CurrentRow.DataBoundItem;
+                Product? product = (Product)dgvProducts.CurrentRow.DataBoundItem;
 
                 lblName.Text = product.Name;
                 lblPrice.Text = product.GetFinalPrice().ToString("C");
                 lblType.Text = product.GetProductType();
                 lblDescription.Text = product.Description;
             }
+        }
+
+        private void btnAddCart_Click(object sender, EventArgs e)
+        {
+            if (dgvProducts.CurrentRow != null)
+            {
+                Product? product = (Product)dgvProducts.CurrentRow.DataBoundItem;
+                int quantity = (int)nudQuantity.Value;
+
+                cart.AddProduct(product, quantity);
+
+                MessageBox.Show("Product added to cart!");
+            }
+
         }
 
         //This is the end of my sample data

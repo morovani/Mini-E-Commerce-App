@@ -21,7 +21,7 @@ namespace Mini_E_Commerce_App.Services
                 products.Add(product.Id, product);
             }
         }
-        public Product FindProduct(int id)
+        public Product? FindProduct(int id)
         {
             return products.ContainsKey(id) ? products[id] : null;
         }
