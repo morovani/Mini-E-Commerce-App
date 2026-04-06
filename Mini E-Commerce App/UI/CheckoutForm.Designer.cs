@@ -33,12 +33,12 @@
             btnPayment = new Button();
             lblDiscountSummary = new Label();
             grpPaymentSummary = new GroupBox();
-            lblTaxSummary = new Label();
-            lblNet = new Label();
-            txtCardInfo = new TextBox();
-            btnReturnToCart = new Button();
-            label1 = new Label();
             lblFinalTotal = new Label();
+            label1 = new Label();
+            txtCardInfo = new TextBox();
+            lblNet = new Label();
+            lblTaxSummary = new Label();
+            btnReturnToCart = new Button();
             grpPaymentSummary.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             lblStatus.AutoSize = true;
             lblStatus.Location = new Point(12, 34);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(44, 18);
+            lblStatus.Size = new Size(65, 27);
             lblStatus.TabIndex = 0;
             lblStatus.Text = "Status: ";
             // 
@@ -57,7 +57,7 @@
             comboBox1.Location = new Point(63, 30);
             comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 26);
+            comboBox1.Size = new Size(121, 35);
             comboBox1.TabIndex = 1;
             // 
             // btnPayment
@@ -69,6 +69,7 @@
             btnPayment.TabIndex = 3;
             btnPayment.Text = "Confirm Payment";
             btnPayment.UseVisualStyleBackColor = true;
+            btnPayment.Click += btnPayment_Click;
             // 
             // lblDiscountSummary
             // 
@@ -76,7 +77,7 @@
             lblDiscountSummary.BorderStyle = BorderStyle.Fixed3D;
             lblDiscountSummary.Location = new Point(16, 32);
             lblDiscountSummary.Name = "lblDiscountSummary";
-            lblDiscountSummary.Size = new Size(82, 20);
+            lblDiscountSummary.Size = new Size(120, 29);
             lblDiscountSummary.TabIndex = 0;
             lblDiscountSummary.Text = "Discount: $$$";
             // 
@@ -96,26 +97,27 @@
             grpPaymentSummary.TabIndex = 2;
             grpPaymentSummary.TabStop = false;
             grpPaymentSummary.Text = "Payment Summary";
+            grpPaymentSummary.Enter += grpPaymentSummary_Enter;
             // 
-            // lblTaxSummary
+            // lblFinalTotal
             // 
-            lblTaxSummary.AutoSize = true;
-            lblTaxSummary.BorderStyle = BorderStyle.Fixed3D;
-            lblTaxSummary.Location = new Point(16, 79);
-            lblTaxSummary.Name = "lblTaxSummary";
-            lblTaxSummary.Size = new Size(86, 20);
-            lblTaxSummary.TabIndex = 1;
-            lblTaxSummary.Text = "Tax (15%): $$$";
+            lblFinalTotal.AutoSize = true;
+            lblFinalTotal.BorderStyle = BorderStyle.Fixed3D;
+            lblFinalTotal.Location = new Point(16, 173);
+            lblFinalTotal.Name = "lblFinalTotal";
+            lblFinalTotal.Size = new Size(130, 29);
+            lblFinalTotal.TabIndex = 5;
+            lblFinalTotal.Text = "Final Total: $$$";
             // 
-            // lblNet
+            // label1
             // 
-            lblNet.AutoSize = true;
-            lblNet.BorderStyle = BorderStyle.Fixed3D;
-            lblNet.Location = new Point(16, 126);
-            lblNet.Name = "lblNet";
-            lblNet.Size = new Size(85, 20);
-            lblNet.TabIndex = 2;
-            lblNet.Text = "Net Total: $$$";
+            label1.AutoSize = true;
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Location = new Point(6, 217);
+            label1.Name = "label1";
+            label1.Size = new Size(108, 29);
+            label1.TabIndex = 4;
+            label1.Text = "Card Details";
             // 
             // txtCardInfo
             // 
@@ -123,8 +125,29 @@
             txtCardInfo.Margin = new Padding(3, 4, 3, 4);
             txtCardInfo.MaxLength = 16;
             txtCardInfo.Name = "txtCardInfo";
-            txtCardInfo.Size = new Size(233, 21);
+            txtCardInfo.Size = new Size(233, 28);
             txtCardInfo.TabIndex = 3;
+            txtCardInfo.TextChanged += txtCardInfo_TextChanged;
+            // 
+            // lblNet
+            // 
+            lblNet.AutoSize = true;
+            lblNet.BorderStyle = BorderStyle.Fixed3D;
+            lblNet.Location = new Point(16, 126);
+            lblNet.Name = "lblNet";
+            lblNet.Size = new Size(126, 29);
+            lblNet.TabIndex = 2;
+            lblNet.Text = "Net Total: $$$";
+            // 
+            // lblTaxSummary
+            // 
+            lblTaxSummary.AutoSize = true;
+            lblTaxSummary.BorderStyle = BorderStyle.Fixed3D;
+            lblTaxSummary.Location = new Point(16, 79);
+            lblTaxSummary.Name = "lblTaxSummary";
+            lblTaxSummary.Size = new Size(128, 29);
+            lblTaxSummary.TabIndex = 1;
+            lblTaxSummary.Text = "Tax (15%): $$$";
             // 
             // btnReturnToCart
             // 
@@ -136,33 +159,13 @@
             btnReturnToCart.Text = "Back To Cart";
             btnReturnToCart.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Location = new Point(6, 217);
-            label1.Name = "label1";
-            label1.Size = new Size(73, 20);
-            label1.TabIndex = 4;
-            label1.Text = "Card Details";
-            // 
-            // lblFinalTotal
-            // 
-            lblFinalTotal.AutoSize = true;
-            lblFinalTotal.BorderStyle = BorderStyle.Fixed3D;
-            lblFinalTotal.Location = new Point(16, 173);
-            lblFinalTotal.Name = "lblFinalTotal";
-            lblFinalTotal.Size = new Size(89, 20);
-            lblFinalTotal.TabIndex = 5;
-            lblFinalTotal.Text = "Final Total: $$$";
-            // 
             // CheckoutForm
             // 
             AcceptButton = btnPayment;
-            AutoScaleDimensions = new SizeF(7F, 18F);
+            AutoScaleDimensions = new SizeF(10F, 27F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnReturnToCart;
-            ClientSize = new Size(269, 439);
+            ClientSize = new Size(676, 628);
             Controls.Add(btnReturnToCart);
             Controls.Add(grpPaymentSummary);
             Controls.Add(btnPayment);

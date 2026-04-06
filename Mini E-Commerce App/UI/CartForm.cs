@@ -21,7 +21,7 @@ namespace Mini_E_Commerce_App
 
         private void CartForm_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void LoadCart()
         {
@@ -49,6 +49,11 @@ namespace Mini_E_Commerce_App
 
             LoadCart();
 
+        }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

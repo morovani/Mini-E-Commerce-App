@@ -1,0 +1,2 @@
+1,John,john@email.com,1234,Regular
+2,Jane,jane@email.com,abcd,VIP
