@@ -13,15 +13,5 @@ namespace Mini_E_Commerce_App.Models
         {
             return Product.GetFinalPrice() * Quantity;
         }
-
-        public string ProductName
-        {
-            get { return Product.Name; }
-        }
-
-        public decimal Price
-        {
-            get { return Product.GetFinalPrice(); }
-        }
     }
 }

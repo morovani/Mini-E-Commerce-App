@@ -6,7 +6,6 @@ namespace Mini_E_Commerce_App.Models
 {
     public abstract class Customer
     {
-        public int CustomerId { get; set; }
         public string Name { get; set; }
 
         public abstract decimal ApplyDiscount(decimal total);

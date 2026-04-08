@@ -11,7 +11,10 @@ namespace Mini_E_Commerce_App.Models
 
         public bool ProcessPayment()
         {
-            return !string.IsNullOrEmpty(CardNumber);
+            return !string.IsNullOrEmpty(CardNumber) 
+                &&
+            CardNumber.All(char.IsDigit)
+            && CardNumber.Length >= 8;
         }
     }
 }

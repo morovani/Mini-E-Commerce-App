@@ -1,89 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Mini_E_Commerce_App.Interfaces;
 
 namespace Mini_E_Commerce_App.Models
 {
-    public abstract class Product : IComparable<Product>
+    public abstract class Product : IDiscountable, IComparable<Product>
     {
-        public int Id { get; set; }
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
-        public decimal _price;
-        public decimal Price 
-        { 
-            get { return _price; } 
-            set 
-            {
-                if (value < 0)
-                    _price = value; 
-            } 
-        }
+        public decimal Price { get; set; }
 
-        public string? Description { get; set; }
-
-        public bool HasDiscount { get; set; }
-        public decimal DiscountPercentage { get; set; }
-        public decimal FinalPrice 
-        { 
-            get { return GetFinalPrice(); }
-        }
-
+        public decimal Discount { get; set; }
+        public int Stock { get; set; }
         public decimal GetFinalPrice()
-        { 
-            if (HasDiscount == true)
-                return Price - (Price * (DiscountPercentage/100));
+        {
+            if (Discount > 0)
+                return Price - (Price * (Discount / 100));
 
             return Price;
         }
-
-        public abstract string GetProductType();
-        public abstract string GetDetails();
-
-        public int CompareTo(Product other)
+        public int CompareTo(Product? other)
         {
-            if (other == null) return 1;
-            return this.Price.CompareTo(other.Price);
+            return Price.CompareTo(other?.Price);
         }
+        public abstract string GetDetails();
     }
 
-    public class PhysicalProduct : Product, IDiscountable
+    public class PhysicalProduct : Product
     {
-        public int StockQuantity { get; set; }
-        public override string GetProductType()
-        {
-            return "Physical";
-        }
-
         public override string GetDetails()
         {
-            return $"{Name} - {GetFinalPrice():C} ({StockQuantity})";
+            return $"{Name} (Physical)";
         }
-
-        public decimal ApplyDiscount(decimal amount)
-        {
-            return GetFinalPrice();
-        }
-
     }
 
     public class DigitalProduct : Product
     {
-        public double FileSizeMB { get; set; }
-        public override string GetProductType()
-        {
-            return "Physical";
-        }
-
         public override string GetDetails()
         {
-            return $"{Name} - {GetFinalPrice():C} ({FileSizeMB})";
+            return $"{Name} (Digital)";
         }
-
-        public decimal ApplyDiscount(decimal amount)
+    }
+    public class DiscountedProduct : Product
+    {
+        public override string GetDetails()
         {
-            return GetFinalPrice();
+            return $"{Name} (Discounted)";
         }
     }
 }

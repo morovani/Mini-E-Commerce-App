@@ -7,40 +7,24 @@ namespace Mini_E_Commerce_App.Services
 {
     public class Inventory
     {
-        private Dictionary<int, Product> products = new Dictionary<int, Product>();
+        public List<Product> Products { get; set; } = new();
 
-        public List<Product> GetAllProducts()
+        public void Load()
         {
-            return products.Values.ToList();
-        }
+            var path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "products.txt");
+            var lines = System.IO.File.ReadAllLines(path);
 
-        public void AddProduct(Product product)
-        {
-            if (!products.ContainsKey(product.Id))
+            foreach (var line in lines)
             {
-                products.Add(product.Id, product);
+                var parts = line.Split(',');
+                Product prod = parts[2] == "Physical" ? new PhysicalProduct() : new DigitalProduct();
+                prod.Name = parts[0];
+                prod.Price = decimal.Parse(parts[1]);
+                prod.Discount = decimal.Parse(parts[3]);
+                prod.Stock = int.Parse(parts[4]);
+
+                Products.Add(prod);
             }
-        }
-        public Product? FindProduct(int id)
-        {
-            return products.ContainsKey(id) ? products[id] : null;
-        }
-
-        public List<Product> SearchProducts(string keyword)
-        {
-            return products.Values
-                .Where(p => p.Name.ToLower().Contains(keyword.ToLower()))
-                .ToList();
-        }
-
-        public List<Product> FilterByCategory(string category)
-        {
-            if (category == "All")
-                return GetAllProducts();
-
-            return products.Values
-                .Where(p => p.GetProductType() ==  category)
-                .ToList();
         }
     }
 }

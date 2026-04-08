@@ -6,12 +6,12 @@ namespace Mini_E_Commerce_App.Models
 {
     public class Order
     {
-        public List<OrderItem> Items { get; set; } = new List<OrderItem>();
-        public Customer Customer { get; set; } = null!;
+        public List<OrderItem> Items { get; set; } = new();
+        public Customer Customer { get; set; }
 
         public decimal GetTotal()
         {
-            decimal total = Items.Sum(i => i.GetSubtotal());
+            decimal total = Items.Sum(i => i.Product.GetFinalPrice() * i.Quantity);
             return Customer.ApplyDiscount(total);
         }
     }

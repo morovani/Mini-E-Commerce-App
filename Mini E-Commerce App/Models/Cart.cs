@@ -2,57 +2,31 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Diagnostics.Eventing.Reader;
 namespace Mini_E_Commerce_App.Models
 {
     public class Cart
     {
-        private List<CartItem> items = new List<CartItem>();
-
-        public List<CartItem> Items
-        {
-            get { return items; }
-        }
+        public List<CartItem> items { get; set; } = new();
 
         // METHOD OVERLOADING
-        public void AddProduct(Product product)
+        public void AddProduct(Product p)
         {
-            AddProduct(product, 1);
+            AddProduct(p, 1);
         }
 
-        public void AddProduct(Product product, int quantity)
+        public void AddProduct(Product p, int qty)
         {
-            var existingItem = items.FirstOrDefault(i => i.Product.Id == product.Id);
+            if (p.Stock < qty) return;
+            
+            p.Stock -= qty;
+
+            var existingItem = items.FirstOrDefault(i => i.Product == p);
 
             if (existingItem != null)
-            {
-                existingItem.Quantity += quantity;
-            }
+                existingItem.Quantity += qty;
             else
-            {
-                items.Add(new CartItem
-                {
-                    Product = product,
-                    Quantity = quantity
-                });
-            }
-        }
-
-        public void RemoveProduct(Product product)
-        {
-            items.RemoveAll(i => i.Product.Id == product.Id);
-        }
-
-        public void UpdateQuantity(Product product, int newQuantity)
-        {
-            var item = items.FirstOrDefault(i => i.Product.Id == product.Id);
-
-            if (item != null)
-            {
-                if (newQuantity <= 0)
-                    items.Remove(item);
-                else
-                    item.Quantity = newQuantity;
-            }
+                items.Add(new CartItem { Product = p, Quantity = qty });
         }
 
         public decimal GetTotal()
@@ -64,12 +38,8 @@ namespace Mini_E_Commerce_App.Models
         {
             Cart result = new Cart();
 
-            foreach (var item in c1.Items)
-                result.AddProduct(item.Product, item.Quantity);
-
-            foreach (var item in c2.Items)
-                result.AddProduct(item.Product, item.Quantity);
-
+            result.items.AddRange(c1.items);
+            result.items.AddRange(c2.items);
             return result;
         }
     }
