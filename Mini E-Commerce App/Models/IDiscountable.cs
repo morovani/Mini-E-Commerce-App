@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mini_E_Commerce_App.Interfaces
+namespace Mini_E_Commerce_App.Models
 {
     public interface IDiscountable
     {
-        decimal ApplyDiscount(decimal amount);
+        decimal GetFinalPrice();
     }
 }

@@ -1,0 +1,2 @@
+john@email.com,1234,Regular,John Doe
+jane@email.com,abcd,VIP,Jane Smith

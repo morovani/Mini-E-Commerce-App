@@ -1,0 +1,4 @@
+Laptop,1200,Digital,0,10
+Smartphone,800,Physical,0,15
+Headphones,150,Digital,0,20
+Smartwatch,250,Special,0,5

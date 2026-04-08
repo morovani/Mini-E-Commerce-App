@@ -1,3 +1,6 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Mini E-Commerce App/Data/customers.txt" />
+  </Folder>
   <Project Path="Mini E-Commerce App/Mini E-Commerce App.csproj" />
 </Solution>

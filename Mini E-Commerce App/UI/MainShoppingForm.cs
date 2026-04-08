@@ -12,62 +12,33 @@ namespace Mini_E_Commerce_App
 {
     public partial class MainShoppingForm : Form
     {
-        public MainShoppingForm()
+        public MainShoppingForm(Customer customer, Cart cart)
         {
             InitializeComponent();
+            currentCustomer = customer;
+            this.cart = cart;
         }
-        private Cart cart = new Cart();
+        Cart cart = new Cart();
+        Customer currentCustomer;
+        Inventory inventory = new Inventory();
 
         private void MainShoppingForm_Load(object sender, EventArgs e)
         {
-            btnAddCart.Enabled = true;
-            LoadSampleData();
-            LoadProducts();
-        }
-
-        //This is temporary sample code to test is my product.cs is going to work with products
-        private Inventory inventory = new Inventory();
-
-        private void LoadSampleData()
-        {
-            inventory.AddProduct(new PhysicalProduct
-            {
-                Id = 1,
-                Name = "Laptop",
-                _price = 1200,
-                Description = "Gaming Laptop",
-                StockQuantity = 5,
-                HasDiscount = true,
-                DiscountPercentage = 10
-            });
-
-            inventory.AddProduct(new DigitalProduct
-            {
-                Id = 2,
-                Name = "E-Book",
-                _price = 25,
-                Description = "C# Guide",
-                FileSizeMB = 3.2,
-                HasDiscount = false
-            });
-        }
-
-        private void LoadProducts()
-        {
-            dgvProducts.DataSource = null;
-            dgvProducts.DataSource = inventory.GetAllProducts();
+            inventory.Load();
+            dgvProducts.DataSource = inventory.Products;
         }
 
         private void dgvProducts_SelectionChanged(object sender, EventArgs e)
         {
+            grpProductDetails.Show();
             if (dgvProducts.CurrentRow != null)
             {
                 Product? product = (Product)dgvProducts.CurrentRow.DataBoundItem;
 
                 lblName.Text = product.Name;
                 lblPrice.Text = product.GetFinalPrice().ToString("C");
-                lblType.Text = product.GetProductType();
-                lblDescription.Text = product.Description;
+                lblStock.Text = $"Stock: {product.Stock}";
+
             }
         }
 
@@ -85,6 +56,12 @@ namespace Mini_E_Commerce_App
 
         }
 
-        //This is the end of my sample data
+        private void btnViewCart_Click(object sender, EventArgs e)
+        {
+            CartForm form = new CartForm(cart, currentCustomer);
+            form.Show();
+            this.Hide();
+        }
     }
 }
+    
