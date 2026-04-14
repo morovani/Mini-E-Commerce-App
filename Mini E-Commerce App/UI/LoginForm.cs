@@ -32,6 +32,7 @@ namespace Mini_E_Commerce_App
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // To login you have to use either email:john@email.com , password:1234 or jane@email.com ,abcd.
             try 
             {
                 var user = AuthService.Login(txtEmail.Text, txtPassword.Text);

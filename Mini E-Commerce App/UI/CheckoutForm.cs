@@ -56,6 +56,9 @@ namespace Mini_E_Commerce_App.Services
                 {
                     File.AppendAllText("orders.txt", $"{currentCustomer.Name},{order.GetTotal()}\n");
                     MessageBox.Show("Payment successful!");
+                    lblFinalTotal.Text = "";
+                    txtCardInfo.Text = "";
+                    lblDiscountSummary.Text = "";
                 }
                 else
                 {
