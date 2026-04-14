@@ -19,6 +19,10 @@ namespace Mini_E_Commerce_App.Models
 
             return Price;
         }
+        public override string ToString()
+        {
+            return Name;
+        }
         public int CompareTo(Product? other)
         {
             return Price.CompareTo(other?.Price);
